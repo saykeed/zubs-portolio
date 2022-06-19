@@ -26,7 +26,7 @@
     ]
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/scss/variable.scss";
 
     div.services{

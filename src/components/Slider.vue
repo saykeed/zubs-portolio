@@ -4,28 +4,52 @@
         <h1>WHAT CLIENTS SAY</h1>
 
         <div class="testimonialCards">
-            <div class="cards"
-              v-for="card in testimonials" :key="card.desc"
-            >
-                <p class="desc">{{card.desc}}</p>
-                <div class="info">
-                    <img :src="card.img" :alt="card.name">
-                    <div class="nameAndRole">
-                        <p class="name">{{card.name}}</p>
-                        <p class="role">{{card.role}}</p>
-                    </div>
-                </div>
-            </div> 
+            
+                <SliderCard
+                    v-for="(card, index) in testimonials" :key="card.id"
+                    :card="card"
+                    :index="index"
+                    :slide="currentSlide"
+                    :slidePath="slidePath"
+                /> 
+           
+        </div>
+        <div class="buttons">
+            <button @click="prev"><i class="material-icons">arrow_back</i></button>
+            <button @click="next"><i class="material-icons">arrow_forward</i></button>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-    const testimonials: {name:string, role:string, img:string, desc:string}[] = [
-        {name: 'Tola Owolabi', role: 'Software Developer', img: 'https://media-exp2.licdn.com/dms/image/C4E03AQHhh4LruOLctQ/profile-displayphoto-shrink_100_100/0/1603625276783?e=1660780800&v=beta&t=2SLMhkA2auwTAt9XgkKIR2f5MziNbrvb2GjS3qrg0rQ', desc: 'Zubair is enthusiastic about products, a positive influence to the team.'},
-        {name: 'Babatunde Koiki', role: 'Software Engineer', img: 'https://media-exp2.licdn.com/dms/image/C5603AQGVHpCMXZXTSA/profile-displayphoto-shrink_100_100/0/1639143765091?e=1660780800&v=beta&t=4yJYkBnsnX_ijg6NmdOhf8jElS17C6ZewTaQWdrcCyg', desc: 'Idris is a great software engineer and a colleague, he\'s proven himself as a great team member and also a great community builder.'},
-        {name: 'Akinboluwarin Akinwande', role: 'Backend Engineer', img: 'https://media-exp2.licdn.com/dms/image/C4D03AQEjQpyW6IotYw/profile-displayphoto-shrink_100_100/0/1584598607809?e=1660780800&v=beta&t=1o-CAcRW8u5wPCpPnQtf8C_RSxzPvDjiWnIyVrfqTRA', desc: 'Iworked with Zubair on a project, https://certlify.com, sometime in 2020. He knew how to as the right questions, which often made the team reevaluate already taken decisions. He is a passionate and fast learner, a person I can say would be an asset to whatever team he is on.'}
+    import { ref } from 'vue'
+    import SliderCard from '../components/SliderCard.vue'
+
+    const currentSlide = ref(1)
+    const slidePath = ref('')
+    const testimonials: {id: number, name:string, role:string, img:string, desc:string}[] = [
+        {id: 1, name: 'Tola Owolabi', role: 'Software Developer', img: 'https://media-exp2.licdn.com/dms/image/C4E03AQHhh4LruOLctQ/profile-displayphoto-shrink_100_100/0/1603625276783?e=1660780800&v=beta&t=2SLMhkA2auwTAt9XgkKIR2f5MziNbrvb2GjS3qrg0rQ', desc: 'Zubair is enthusiastic about products, a positive influence to the team.'},
+        {id: 2, name: 'Babatunde Koiki', role: 'Software Engineer', img: 'https://media-exp2.licdn.com/dms/image/C5603AQGVHpCMXZXTSA/profile-displayphoto-shrink_100_100/0/1639143765091?e=1660780800&v=beta&t=4yJYkBnsnX_ijg6NmdOhf8jElS17C6ZewTaQWdrcCyg', desc: 'Idris is a great software engineer and a colleague, he\'s proven himself as a great team member and also a great community builder.'},
+        {id: 3, name: 'Akinboluwarin Akinwande', role: 'Backend Engineer', img: 'https://media-exp2.licdn.com/dms/image/C4D03AQEjQpyW6IotYw/profile-displayphoto-shrink_100_100/0/1584598607809?e=1660780800&v=beta&t=1o-CAcRW8u5wPCpPnQtf8C_RSxzPvDjiWnIyVrfqTRA', desc: 'Iworked with Zubair on a project, https://certlify.com, sometime in 2020. He knew how to as the right questions, which often made the team reevaluate already taken decisions. He is a passionate and fast learner, a person I can say would be an asset to whatever team he is on.'}
     ]
+
+    const next = () => {
+        slidePath.value = 'next'
+        if(currentSlide.value >= testimonials.length -1) {
+            currentSlide.value = 0
+        } else {
+            currentSlide.value++
+        }
+    }
+
+    const prev = () => {
+        slidePath.value = 'prev'
+        if(currentSlide.value <= 0) {
+            currentSlide.value = testimonials.length -1
+        } else {
+            currentSlide.value--
+        }
+    }
 </script>
 
 <style lang="scss">
@@ -48,52 +72,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow-x: scroll;
-            
+            position: relative;
+            height: 300px;
+        }
 
-            div.cards{
-                width: 250px;
-                height: 200px;
-                box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.356), -2px -2px 1px rgba(0, 0, 0, 0.356);
-                border-radius: 0.5rem;
-                padding: 1rem;
-                margin: 1rem;
-                flex-shrink: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+        div.buttons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
 
-                p.desc{
-                    font-size: 0.7rem;
-                    color: $fadeWhite;
-                }
-
-                div.info{
-                    display: flex;
-                    align-items: center;
-
-                    img{
-                        width: 2.5rem;
-                        height: 2.5rem;
-                        border-radius: 2.5rem;
-                        margin-right: 1rem;
-                        object-fit: cover;
-                        object-position: top center;
-                    }
-
-                    div.nameAndRole{
-                        p.name{
-                            font-weight: 500;
-                            font-size: 0.8rem;
-                        }
-
-                        p.role{
-                            font-weight: 300;
-                            font-size: 0.7rem;
-                            color: $appRed;
-                        }
-                    }
-                }
+            button{
+                width: 70px;
+                height: 30px;
+                background: $appRed;
+                color: white;
+                border: none;
+                margin: 0 0.5rem;
+                border-radius: 0.2rem;
             }
         }
     }
@@ -102,4 +98,6 @@
    @media screen and (min-width: 700px) {
         
     }
+
+
 </style>
