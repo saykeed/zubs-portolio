@@ -2,12 +2,12 @@
     <div class="footer">
         <h1><span>Z</span>UBS</h1>
         <div class="handle">
-            <router-link
-            v-for="link in socialLinks" :key="link.icon"
-            :to="link.route"
+            <a
+            v-for="link in socialLinks" :key="link.icon" target="blank"
+            :href="link.route"
             >
                 <i :class="link.icon"></i>
-            </router-link>
+            </a>
         </div>
     </div>
 </template>
@@ -40,17 +40,18 @@
             justify-content: center;
             margin: 1rem auto 0;
 
-            router-link{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 2rem;
-                width: 2rem;
-                background: black;
-                margin-right: 0.5rem;
-                border-radius: 0.4rem;
-                cursor: pointer;
-            }
+            a{
+                       text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 2rem;
+                        width: 2rem;
+                        background: black;
+                        margin-right: 0.5rem;
+                        border-radius: 0.4rem;
+                        color: white;
+                   }
         }
         
     }

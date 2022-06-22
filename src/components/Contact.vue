@@ -9,11 +9,11 @@
             </div>
             <div class="tel item">
                 <i class="material-icons">phone</i>
-                <p>+234-9012345678</p>
+                <p>+234-7052053780</p>
             </div>
             <div class="email item">
                 <i class="material-icons">email</i>
-                <p>zubs@gmail.com</p>
+                <p>zubairidrisaweda@yahoo.com</p>
             </div>
             <div class="freelance item">
                 <i class="material-icons">event_available</i>

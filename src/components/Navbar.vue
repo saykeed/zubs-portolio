@@ -2,7 +2,7 @@
     <div class="navbar">
         <h1><span>Z</span>UBS</h1>
         <div class="links">
-            <router-link v-for="link in links" :key="link.text" to="/">{{link.text}}</router-link>
+            <p v-for="link in links" :key="link.text" @click="scrollTo(link.route)">{{link.text}}</p>
         </div>
         <button>Download CV</button>
     </div>
@@ -10,12 +10,17 @@
 
 <script setup lang="ts">
     const links:{route: string, text: string}[] = [
-        {route: '/', text: 'HOME'},
-        {route: '/', text: 'SERVICES'},
-        {route: '/', text: 'PORTFOLIO'},
-        {route: '/', text: 'RESUME'},
-        {route: '/', text: 'CONTACT'}
+        {route: '#home', text: 'HOME'},
+        {route: '#services', text: 'SERVICES'},
+        {route: '#resume', text: 'RESUME'},
+        {route: '#testimony', text: 'TESTIMONIALS'},
+        {route: '#contact', text: 'CONTACT'}
     ]
+    const emit = defineEmits(['scrollTo'])
+
+    const scrollTo = (path: string) => {
+        emit('scrollTo', path)
+    }
 </script>
 
 <style lang="scss">
@@ -27,6 +32,13 @@
         align-items: center;
         justify-content: space-between;
         height: 70px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: $appBackground;
+        padding: 0 3%;
+        z-index: 999;
 
         h1{
             span{
@@ -38,11 +50,11 @@
             display: flex;
             align-items: center;
 
-            router-link{
+            p{
                 font-size: 0.8rem;
                 color: $fadeWhite;
                 display: block;
-                margin: 0 1rem;
+                margin: 0 0.7rem;
                 cursor: pointer;
                 font-weight: 500;
 

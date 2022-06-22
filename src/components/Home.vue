@@ -7,21 +7,21 @@
             <p class="hello">Hello <span>I'm</span></p>
             <h1>Zubair Idris<br/>Aweda</h1>
             <h3>Software Engineer</h3>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur obcaecati saepe ducimus fugit, odit veritatis minima velit consequuntur dolorum placeat, incidunt ipsum deserunt atque impedit quo. Cupiditate eaque id a.</p>
+            <p class="desc">I am a backend developer with over 2 years experience building web applications and I have a passion for learning and problem solving. <br/> I value work ethics and I am a great advocate of <span class="highlight">Crowdsource</span> by Google (of which I am an Influencer). I love meeting new people and believe strongly in the importance of communities. I am also an avid lover of all forms of art, music being my favorite. I enjoy writing too. You can read my articles on <span class="highlight">Medium</span> and <span class="highlight">Freecodecamp</span>. <br/> I am pretty flexible, and I have grown to learn how to thrive under pressure(not that I like pressure).</p>
             <div class="social">
                 <p>FIND ME ON</p>
                 <div class="handle">
-                    <router-link
-                    v-for="link in socialLinks" :key="link.icon"
-                    :to="link.route"
+                    <a
+                    v-for="link in socialLinks" :key="link.icon" target="blank"
+                    :href="link.route"
                     >
                         <i :class="link.icon"></i>
-                    </router-link>
+                    </a>
                 </div>
             </div>
             <div class="records">
                 <div>
-                    <h2>3+</h2>
+                    <h2>2+</h2>
                     <p>YEARS OF EXPERIENCE</p>
                 </div>
                 <div>
@@ -51,6 +51,10 @@
    div.home{
        margin-top: 2rem;
        
+       span.highlight{
+           color: $appRed;
+       }
+
        div.dp{
 
            img{
@@ -81,7 +85,7 @@
 
            p.desc{
                color: $fadeWhite;
-               font-size: 0.7rem;
+               font-size: 0.8rem;
                margin: 0.5rem 0 1.5rem;
            }
 
@@ -95,8 +99,9 @@
                    align-items: center;
                    margin: 1rem 0;
 
-                   router-link{
-                       display: flex;
+                   a{
+                       text-decoration: none;
+                        display: flex;
                         align-items: center;
                         justify-content: center;
                         height: 2rem;
@@ -104,6 +109,7 @@
                         background: black;
                         margin-right: 0.5rem;
                         border-radius: 0.4rem;
+                        color: white;
                    }
                }
            }

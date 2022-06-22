@@ -17,12 +17,12 @@
 
 <script setup lang="ts">
     const cards: {icon:string, title:string, desc:string}[] = [
-        {icon: 'computer', title: 'Web Development', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur obcaecati saepe ducimus fugit, odit veritatis minima velit consequuntur dolorum placeat, incidunt ipsum deserunt atque impedit quo.'},
-        {icon: 'computer', title: 'Web Development', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur obcaecati saepe ducimus fugit, odit veritatis minima velit consequuntur dolorum placeat, incidunt ipsum deserunt atque impedit quo.'},
-        {icon: 'computer', title: 'Web Development', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur obcaecati saepe ducimus fugit, odit veritatis minima velit consequuntur dolorum placeat, incidunt ipsum deserunt atque impedit quo.'},
-        {icon: 'computer', title: 'Web Development', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur obcaecati saepe ducimus fugit, odit veritatis minima velit consequuntur dolorum placeat, incidunt ipsum deserunt atque impedit quo.'},
-        {icon: 'computer', title: 'Web Development', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur obcaecati saepe ducimus fugit, odit veritatis minima velit consequuntur dolorum placeat, incidunt ipsum deserunt atque impedit quo.'},
-        {icon: 'computer', title: 'Web Development', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur obcaecati saepe ducimus fugit, odit veritatis minima velit consequuntur dolorum placeat, incidunt ipsum deserunt atque impedit quo.'}
+        {icon: 'computer', title: 'Frontend Development', desc: 'By leveraging on my proficient knowledge of HTML, CSS, and modern JavaScript, I can build intuitive frontend interfaces with amazing user experiences.'},
+        {icon: 'computer', title: 'Backend Engineering', desc: 'With a solid grasp of Python and NodeJs I\'m able to work the backend logic of any application like magic and turn ordinary webpages into web apps.'},
+        {icon: 'computer', title: 'API Development', desc: 'Need to make an app with a web-based server? My knowledge of RESTful APIs development is sufficient enough to make that happen.'},
+        {icon: 'computer', title: 'Frontend and Backend Optimzation', desc: 'Nobody likes it slow... So, let\'s add a programming equavalent of NO2 gas into your frontend or backend logic and make it go fast... 🛫🛫🛫'},
+        {icon: 'computer', title: 'Database Management', desc: 'From Relational to Object-based, I\'ve got a quite intermediate knowledge of databases and I can help you manage them.'},
+        {icon: 'computer', title: 'Plugins and Extensions Development', desc: 'Hmmm... I smell exotic. I guess you\'re looking to make your app a little more sophisticating, right? Well, you\'re in for a treat cos I\'ve got the juice to make that happen.'}
     ]
 </script>
 
