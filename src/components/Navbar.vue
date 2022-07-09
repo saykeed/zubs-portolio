@@ -1,11 +1,14 @@
 <template>
-    <div class="navbar fixed w-full h-16 backdrop-blur-md flex items-center justify-between px-4 text-white">
-        <h1 class="text-4xl text-green-800 font-black">Z</h1>
-        <div class="links hidden md:block">
+    <div class="navbar fixed w-full h-20 border backdrop-blur-md flex items-center justify-between px-4 text-white z-50">
+        <h1 class="text-6xl text-slate-900 font-black">Z</h1>
+        <div class="links hidden md:flex">
             <router-link
-             class="p-2 mx-2"
+             class="group p-2 mx-2 text-slate-600 flex flex-col items-center"
              v-for="link in links" :key="link.text"
-             :to="link.route">{{link.text}}</router-link>
+             :to="link.route">
+                <span class="w-1 h-1 rounded-full bg-green-900 invisible group-hover:visible"></span>
+                <p class="group-hover:text-green-900">{{link.text}}</p>
+             </router-link>
         </div>
         <i class="material-icons text-white text-md md:hidden bg-green-800 flex items-center justify-center w-9 h-9 rounded-full cursor-pointer">menu</i>
     </div>
