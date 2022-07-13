@@ -1,22 +1,15 @@
 <template>
   <Navbar/>
+  <Sidemenu/>
   <router-view/>
 </template>
 
 <script setup lang="ts">
-  import { onMounted } from "vue";
-  // import AOS from "aos";
   import Navbar from './components/Navbar.vue';
+  import Sidemenu from "./components/Sidemenu.vue";
   
 
-  // onMounted(() => {
-  //     AOS.init({
-  //       duration: 700,
-  //       easing: 'ease', 
-  //       once: false,
-  //       mirror: true,
-  //     });
-  // })
+  
 </script>
 
 <style lang="scss">

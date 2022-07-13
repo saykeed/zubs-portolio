@@ -17,22 +17,7 @@ body{
   cursor: pointer;
 } */
 
-  /* ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
   
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(226, 58, 58);
-  }  */
 
 @tailwind base;
 @tailwind components;
@@ -42,8 +27,26 @@ body{
   html,* {
     /* font-family: 'Livvic', sans-serif; */
     font-family: 'DM Sans', sans-serif;
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     border-box: box-sizing;
   }
+
+  /* ::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.200);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(226, 58, 58);
+  }   */
 }

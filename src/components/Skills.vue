@@ -14,6 +14,13 @@
                 </div>
             </div>
 
+            <button data-tooltip-target="tooltip-default" type="button" 
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Default tooltip</button>
+        <div id="tooltip-default" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+            Tooltip content
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+
             <div class="experienceSection p-3 md:w-[47%]">
                 <div
                     v-for="job in experiences" :key="job.duration"
@@ -32,35 +39,7 @@
         <SocialBtn/>
     </div>
 
-    <!-- 
-
-        <div class="stackAndExperience w-full flex flex-col md:flex-row items-center md:items-start justify-between md:justify-center">
-                <div class="stack flex flex-wrap items-center justify-center ">
-                    <div class="eachStack flex flex-col items-center w-fit m-3"
-                      v-for="stack in stacks" :key="stack.text"
-                    >
-                        <div class="stackImgBox w-20 h-20 rounded-full bg-slate-300 flex items-center justify-center">
-                            <img class="w-8/12 object-cover object-center" :src="getImageUrl(`${stack.img}`)" :alt="stack.text"/>
-                        </div>
-                        <p>{{stack.text}}</p>
-                    </div>
-                </div>
-
-                <div class="experienceSection ">
-                    <div
-                      v-for="job in experiences" :key="job.duration"
-                      class="eachExperience flex items-start justify-between w-full my-8"
-                    >
-                        <p class="text-green-800 font-semibold w-[45%]">{{job.duration}}</p>
-                        <div class="info text-left w-[50%]">
-                            <p class="role font-bold">{{job.role}}</p>
-                            <p class="company text-slate-400">{{job.company}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-     -->
+    
 </template>
 
 <script setup lang="ts">

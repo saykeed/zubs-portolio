@@ -1,5 +1,5 @@
 <template>
-    <div class="socialBtn absolute bottom-4 left-4 flex flex-col items-center">
+    <div class="socialBtn absolute bottom-4 left-4 flex-col items-center hidden md:flex">
         <a 
          class="group w-10 h-10 rounded-full flex items-center justify-center bg-white my-1 hover:bg-green-900"
          v-for="link in links"

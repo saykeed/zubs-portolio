@@ -1,11 +1,11 @@
 <template>
     <div class="home">
-        <Homecomp/>
-        <Services/>
-        <Portfolio/>
-        <Skills/>
-        <Testimonial/>
-        <Contact/>
+        <Homecomp id="home"/>
+        <Services id="about"/>
+        <Portfolio id="work"/>
+        <Skills id="skills"/>
+        <Testimonial id="testimonial"/>
+        <Contact id="contact"/>
     </div>
 </template>
 

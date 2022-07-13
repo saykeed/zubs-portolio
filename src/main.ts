@@ -2,8 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from "./router/index"
 import './assets/global.css'
-// import 'aos/dist/aos.css'
-
+import 'flowbite';
 
 
 const app = createApp(App)

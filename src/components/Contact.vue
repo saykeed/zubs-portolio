@@ -1,5 +1,5 @@
 <template>
-    <div class="contact relative py-14 px-8 bg-appBg">
+    <div class="contact relative py-14 px-8 md:px-20 bg-appBg">
         
         <h1 class="mx-auto mb-5 text-5xl font-bold ">Let's Discuss Your Business</h1>
         
