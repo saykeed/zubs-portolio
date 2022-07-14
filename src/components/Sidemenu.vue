@@ -1,6 +1,6 @@
 <template>
     <transition name="menu">
-    <div class="sidemenu bg-white fixed bottom-0 right-0 w-[80%] h-screen z-50 py-8 px-5 text-left"
+    <div class="sidemenu bg-white fixed bottom-0 right-0 w-[80%] h-full z-50 py-8 px-5 text-left"
         v-if="sidebarStatus"
     >
         <i class="material-icons absolute top-2 right-2 text-3xl text-green-900 cursor-pointer"
