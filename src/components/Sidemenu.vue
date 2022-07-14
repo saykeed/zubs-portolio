@@ -9,13 +9,14 @@
             close
         </i>
 
-        <router-link
+        <a
           v-for="link in links" :key="link.text"
-          :to="link.route"
+          :href="link.route"
           class="block py-3 my-2 text-slate-400 font-medium uppercase hover:text-green-800"
+          @click="hideSidebar"
         >
             {{link.text}}
-        </router-link>
+        </a>
     </div> 
     </transition>
 </template>
@@ -25,12 +26,12 @@ import { useSidebar } from '../composables/core/SidebarController';
 
     const { sidebarStatus, closeSidebar } = useSidebar()
     const links = [
-        {text: 'Home', route: '/'},
-        {text: 'About', route: '/'},
-        {text: 'Work', route: '/'},
-        {text: 'Skills', route: '/'},
-        {text: 'Testimonial', route: '/'},
-        {text: 'Contact', route: '/'},
+        {text: 'Home', route: '#home'},
+        {text: 'About', route: '#about'},
+        {text: 'Work', route: '#work'},
+        {text: 'Skills', route: '#skills'},
+        {text: 'Testimonial', route: '#testimonial'},
+        {text: 'Contact', route: '#contact'},
     ]
 
 

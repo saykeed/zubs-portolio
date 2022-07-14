@@ -1,6 +1,8 @@
 <template>
     <div class="homeComp bg-appBg text-slate-400 p-5 pt-24 w-full relative lg:flex lg:items-start lg:justify-start">
-        <div class="intro ml-5 pt-5 text-left">
+        <div class="intro ml-5 pt-5 text-left transition-all duration-[600ms]" ref="intro"
+            :class="{'translate-x-[-200px]': !introIsVisible}"
+        >
             <div class="name m-4 mb-6 p-5 shadow-2xl rounded-lg w-64 flex items-center justify-between">
                 <span class="text-4xl">👋</span>
                 <div>
@@ -19,7 +21,9 @@
             <img class="w-64 h-64 lg:w-[400px] lg:h-[400px] rounded-full" src="../assets/img/zubs.jpg" alt="">
         </div>
 
-        <div class="mainStack w-11/12 max-w-[500px] h-64 md:h-44 mx-auto relative lg:h-[450px] lg:w-[200px]">
+        <div ref="stack" class="mainStack w-11/12 max-w-[500px] h-64 md:h-44 mx-auto relative lg:h-[450px] lg:w-[200px] transition-all duration-[600ms]"
+          
+        >
             <div class="w-24 h-24 rounded-full bg-white flex items-center justify-center absolute top-0 left-0 md:left-[100%] md:-translate-x-[100%] lg:left-0 lg:translate-x-0 lg:top-[100%] lg:-translate-y-[100%]">
                 <img class="w-7/12  object-cover" src="../assets/img/laravel.png" alt="">
             </div>
@@ -36,7 +40,23 @@
 </template>
 
 <script setup lang="ts">
+
+import { ref } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
 import SocialBtn from './SocialBtn.vue'
+
+    const intro = ref(null)
+    // const stack = ref(null)
+    const introIsVisible = ref(false)
+    // const stackIsVisible = ref(false)
+
+    const { stop } = useIntersectionObserver(
+      intro,
+      ([{ isIntersecting }], observerElement) => {
+        introIsVisible.value = isIntersecting
+        // alert(isIntersecting)
+      },
+    )
   
 </script>
 

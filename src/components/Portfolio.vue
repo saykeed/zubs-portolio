@@ -15,8 +15,9 @@
         </div>
 
         <div class="projectsBox flex flex-wrap items-center justify-center my-8">
-            <EachProject v-for="project in filteredProject" :key="project.title" :project="project"/>
+                <EachProject v-for="project in filteredProject" :key="project.title" :project="project"/>
         </div>
+        
         <SocialBtn/>
     </div>
 </template>
@@ -26,7 +27,7 @@ import SocialBtn from './SocialBtn.vue'
 import EachProject from './EachProject.vue';
 import { computed, ref } from 'vue';
 
-
+    
     
     let filterKey = ref('all')
     const buttons = [
@@ -58,6 +59,6 @@ import { computed, ref } from 'vue';
 </script>
 
 <style lang="scss">
-
+    
 
 </style>
