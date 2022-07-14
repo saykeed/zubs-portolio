@@ -1,6 +1,6 @@
 <template>
     <transition name="menu">
-    <div class="sidemenu bg-white fixed bottom-0 right-0 w-[80%] h-full z-50 py-8 px-5 text-left"
+    <div class="sidemenu bg-white fixed bottom-0 right-0 w-[80%] h-full z-50 py-8 px-5 text-left border-2"
         v-if="sidebarStatus"
     >
         <i class="material-icons absolute top-2 right-2 text-3xl text-green-900 cursor-pointer"
@@ -17,6 +17,17 @@
         >
             {{link.text}}
         </a>
+
+        <div class="socialBtn absolute bottom-4 left-1/2 -translate-x-[50%] w-fit flex items-center justify-center">
+            <a 
+              class="group w-10 h-10 rounded-full flex items-center justify-center mx-2 bg-green-700 my-1 hover:bg-green-900"
+              v-for="link in socialLinks" :key="link.icon" :href="link.route"
+            >
+                <i :class="link.icon" class="group-hover:text-white"></i>
+            </a>
+        </div>
+
+        
     </div> 
     </transition>
 </template>
@@ -34,6 +45,12 @@ import { useSidebar } from '../composables/core/SidebarController';
         {text: 'Contact', route: '#contact'},
     ]
 
+    const socialLinks = [
+        {icon: 'fa fa-twitter', route: '/'},
+        {icon: 'fa fa-whatsapp', route: '/'},
+        {icon: 'fa fa-instagram', route: '/'},
+        {icon: 'fa fa-linkedin', route: '/'}
+    ]
 
     // function
     const hideSidebar = () => {
